@@ -9,11 +9,11 @@ date: '2026-08-28'
 status: completed
 tags:
   - C
-  - Sockets
-  - SQLite
-  - Argon2id
-  - Docker
-  - Concurrency
+  - Thread-per-connection
+  - Binary wire protocol
+  - Lock ordering
+  - DB-enforced uniqueness
+  - Password hashing
 github: 'https://github.com/skuzmindev/groupchat-app'
 youtubeUrl: 'https://youtu.be/AfZmLXDy5Tc'
 ---

@@ -5,7 +5,7 @@ import { Github, Linkedin } from '@/components/icons/brand-icons';
 import { getAllWork } from '@/lib/work-content';
 import { languageColor } from '@/lib/languages';
 import { formatDate } from '@/lib/utils';
-import { EMAIL, PRESS, STACK, STATUS } from '@/lib/profile';
+import { CREDENTIALS, EMAIL, PRESS, STACK, STATUS } from '@/lib/profile';
 import { WorkCard } from '@/components/work/WorkCard';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { buttonVariants } from '@/components/ui/button';
@@ -18,8 +18,8 @@ export default async function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative isolate pt-16 pb-24 md:pt-24 md:pb-32">
-        <div className="flex flex-col-reverse items-center gap-8 md:flex-row md:items-center md:justify-between md:gap-12">
+      <section className="relative isolate pt-16 pb-16 md:pt-24">
+        <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between md:gap-12">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-semibold tracking-tight text-balance md:text-5xl">
               Serhii Kuzmin
@@ -77,6 +77,13 @@ export default async function HomePage() {
                 <Linkedin className="h-4 w-4" />
               </a>
             </div>
+
+            {/* Same mono facts row as the /about header. */}
+            <p className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs text-muted-foreground">
+              {[...CREDENTIALS, STATUS].map(fact => (
+                <span key={fact}>{fact}</span>
+              ))}
+            </p>
           </div>
 
           <Image
@@ -89,16 +96,6 @@ export default async function HomePage() {
             className="h-56 w-56 shrink-0 rounded-full border border-border object-cover md:h-72 md:w-72"
           />
         </div>
-
-        <p className="mt-16 text-base text-muted-foreground">
-          BS in Computer Science & Mathematical Sciences — Pennsylvania, USA.{' '}
-          {STATUS}.
-        </p>
-
-        <p className="mt-16 max-w-2xl border-l-2 border-primary pl-5 text-base leading-relaxed text-muted-foreground">
-          Simplicity is the ultimate sophistication — Leonardo da Vinci, by way
-          of Apple’s first brochure, 1977
-        </p>
       </section>
 
       {/* Stack */}

@@ -9,10 +9,10 @@ date: '2026-05-06'
 status: presented
 tags:
   - Python
-  - Quantum Computing
-  - VQE
-  - Qiskit
-  - FastAPI
+  - Noise modelling
+  - Readout error
+  - Hybrid quantum-classical
+  - Reproducible experiments
 github: 'https://github.com/skuzmindev/vqe-web'
 youtubeUrl: 'https://youtu.be/sCCBytSYm5w'
 abstract: >-

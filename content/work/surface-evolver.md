@@ -9,12 +9,11 @@ date: '2026-08-29'
 status: completed
 tags:
   - C
-  - Rust
-  - Tauri
-  - Three.js
-  - FFI
-  - React
-  - TypeScript
+  - Process isolation
+  - FFI safety
+  - Cross-process IPC
+  - Anti-corruption layer
+  - Legacy modernisation
 github: 'https://github.com/skuzmindev/surface-evolver'
 demo: 'https://surface-evolver.vercel.app/'
 youtubeUrl: 'https://youtu.be/ypMWVkUXZn8'
