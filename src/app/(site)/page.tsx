@@ -31,9 +31,9 @@ export default async function HomePage() {
             </p>
 
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
-              I write server-side services in Java, and Python, work close to
-              the machine in C and C++, and build the UIs on top in TypeScript
-              and React. My main focus is on backend and low latency systems.
+              I write server-side services in Java and Python, work close to the
+              machine in C and C++, and build the UIs on top in TypeScript and
+              React. My main focus is on backend and low latency systems.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-2">
@@ -53,7 +53,7 @@ export default async function HomePage() {
                 Email me
               </a>
               <a
-                href="https://github.com/sersergious"
+                href="https://github.com/skuzmindev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={buttonVariants({
@@ -91,7 +91,8 @@ export default async function HomePage() {
         </div>
 
         <p className="mt-16 text-base text-muted-foreground">
-          BS in Computer Science & Mathematics — Pennsylvania, USA. {STATUS}.
+          BS in Computer Science & Mathematical Sciences — Pennsylvania, USA.{' '}
+          {STATUS}.
         </p>
 
         <p className="mt-16 max-w-2xl border-l-2 border-primary pl-5 text-base leading-relaxed text-muted-foreground">
@@ -112,7 +113,7 @@ export default async function HomePage() {
           Research background in quantum computing — noise modelling for
           variational eigensolvers.{' '}
           <Link
-            href="/work"
+            href="/work/noise-induced-errors-in-variational-quantum-eigensolvers"
             className={linkVariants({ underline: 'always', tone: 'primary' })}
           >
             See the paper

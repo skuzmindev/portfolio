@@ -12,7 +12,7 @@ const pages = [
 ];
 
 const externals = [
-  { href: 'https://github.com/sersergious', label: 'GitHub', Icon: Github },
+  { href: 'https://github.com/skuzmindev', label: 'GitHub', Icon: Github },
   {
     href: 'https://www.linkedin.com/in/skuzmin-dev',
     label: 'LinkedIn',

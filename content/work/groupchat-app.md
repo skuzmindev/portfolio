@@ -14,7 +14,7 @@ tags:
   - Argon2id
   - Docker
   - Concurrency
-github: 'https://github.com/sersergious/groupchat-app'
+github: 'https://github.com/skuzmindev/groupchat-app'
 youtubeUrl: 'https://youtu.be/AfZmLXDy5Tc'
 ---
 
@@ -24,7 +24,7 @@ A group chat system written in pure C — a server, a terminal client, and the w
 
 Everything runs from one Docker image, so a session starts identically on Linux, macOS and Windows — `docker compose up -d --build` for the server, then `docker compose run --rm client` in as many terminals as you want people. Chat data lives in a named volume and survives restarts. It builds without Docker too, against a C11 compiler, CMake, SQLite3 and Argon2.
 
-It started as coursework for a course in college on Operating Systems and kept going past what the assignment asked for into a feature-complete CLI app.
+It started as Operating Systems coursework and kept going past what the assignment asked for into a feature-complete CLI app.
 
 # Architecture
 

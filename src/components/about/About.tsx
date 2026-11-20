@@ -25,7 +25,7 @@ export function About() {
         <p>
           Mathematics has been the interest that has empowered me to pursue my
           passions. I started to compete in olympiads and present my work at
-          conferences as early as 7. Fast forward to today, I graduated from the
+          conferences from age 7. Fast forward to today, I graduated from the
           University of Scranton with a degree in Computer Science and
           Mathematical Sciences — the ultimate combination I’d been building
           toward the whole time.
@@ -60,9 +60,9 @@ export function About() {
           PostgreSQL and SQLite. Additionally, I have exposure to a set of
           popular backend web frameworks, such as FastAPI. Despite the heavy
           backend and low level focus, I always make sure that the UI/UX is at
-          the forefront of my work. That is why I have mastered frontend
-          frameworks like React and Next.js to give my apps a nice UI. Finally,
-          I have deployed multiple projects on cloud platforms like AWS.
+          the forefront of my work. That is why I build the frontend myself, in
+          React and Next.js. Finally, I have deployed multiple projects on cloud
+          platforms like AWS.
         </p>
       </Band>
 
@@ -89,9 +89,9 @@ export function About() {
           presented my first results at a conference.
         </p>
         <p>
-          Quantum computing is the only starting point. However, my curiosity is
-          wider than that — I’m drawn to where computer science meets and
-          applied math meet each other and can have direct applications.
+          Quantum computing is just the starting point. My curiosity is wider
+          than that — I’m drawn to where computer science and applied
+          mathematics meet and have direct applications.
         </p>
         <TagList items={FOCUS_AREAS} />
       </Band>
@@ -126,8 +126,8 @@ export function About() {
         </p>
         <p>
           My family is the foundation under all of it. Their support is why I
-          hold myself to rigor, and why I believe the tools I develop, systems I
-          develop and the research I chase are worth doing well.
+          hold myself to rigor, and why I believe the tools and systems I build
+          and the research I chase are worth doing well.
         </p>
       </Band>
 
