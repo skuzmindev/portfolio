@@ -118,7 +118,8 @@ const components: Components = {
 
 export function MDXContent({ source }: { source: string }) {
   return (
-    <div className="text-base">
+    // Bare URLs in a references list are one unbreakable word; let them wrap.
+    <div className="text-base wrap-break-word">
       <ReactMarkdown components={components}>{source}</ReactMarkdown>
     </div>
   );
