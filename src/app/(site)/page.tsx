@@ -147,8 +147,10 @@ export default async function HomePage() {
                 rel="noopener noreferrer"
                 className="group flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:gap-6"
               >
-                <span className="font-mono text-xs whitespace-nowrap text-muted-foreground sm:w-44">
-                  {item.outlet}
+                <span className="flex flex-col font-mono text-xs whitespace-nowrap text-muted-foreground sm:w-44">
+                  {item.outlets.map(outlet => (
+                    <span key={outlet}>{outlet}</span>
+                  ))}
                 </span>
                 <span className="flex-1 group-hover:text-primary">
                   {item.headline}

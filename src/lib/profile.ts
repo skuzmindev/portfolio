@@ -57,27 +57,21 @@ export const FOCUS_AREAS = [
  */
 export const PRESS = [
   {
-    outlet: "The Citizen's Voice",
-    headline:
-      'From fear to future: Student from Ukraine enrolls in University of Scranton',
-    date: '2022-08-24',
-    href: 'https://www.citizensvoice.com/2022/08/24/from-fear-to-future-student-from-ukraine-enrolls-in-university-of-scranton/',
-  },
-  {
-    outlet: 'The Times-Tribune',
+    // Syndicated; the Citizen's Voice copy: https://www.citizensvoice.com/2022/08/24/from-fear-to-future-student-from-ukraine-enrolls-in-university-of-scranton/
+    outlets: ['The Times-Tribune', "The Citizen's Voice"],
     headline:
       'From fear to future: Student from Ukraine enrolls in University of Scranton',
     date: '2022-08-24',
     href: 'https://www.thetimes-tribune.com/2022/08/24/from-fear-to-future-student-from-ukraine-enrolls-in-university-of-scranton/',
   },
   {
-    outlet: 'FOX56 WOLF',
+    outlets: ['FOX56 WOLF'],
     headline: 'University of Scranton Welcomes First-Year Student from Ukraine',
     date: '2022-08-24',
     href: 'https://fox56.com/news/local/university-of-scranton-welcomes-student-from-ukraine',
   },
   {
-    outlet: 'WVIA News',
+    outlets: ['WVIA News'],
     headline:
       'Area college student escapes war in Ukraine on path to study in Scranton',
     date: '2022-08-26',

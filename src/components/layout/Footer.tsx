@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { Github, Linkedin } from '@/components/icons/brand-icons';
 import { EMAIL } from '@/lib/profile';
 import { linkVariants } from '@/components/ui/link-variants';
@@ -28,16 +27,9 @@ export function Footer() {
   return (
     <footer className="mt-auto border-t border-border bg-background py-8">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-6 text-sm text-muted-foreground lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-8">
-        <div className="flex items-center gap-2 lg:justify-self-start">
-          <Image
-            src="/images/logo.png"
-            alt=""
-            width={20}
-            height={20}
-            className="rounded-full"
-          />
-          <span>© {new Date().getFullYear()} Serhii Kuzmin</span>
-        </div>
+        <span className="lg:justify-self-start">
+          © {new Date().getFullYear()} Serhii Kuzmin
+        </span>
 
         <nav aria-label="Footer" className="lg:justify-self-center">
           <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
