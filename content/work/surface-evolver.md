@@ -2,7 +2,7 @@
 kind: project
 title: Surface Evolver Wrapper
 description: >-
-  A native desktop app for macOS, Linux and Windows that wraps Ken Brakke's
+  A native desktop app for macOS and Linux that wraps Ken Brakke's
   Surface Evolver — a 190,000-line C engine for minimising constrained surface
   energy — in a modern three-pane interface with a live WebGL viewer.
 date: '2026-08-29'
@@ -24,7 +24,7 @@ youtubeUrl: 'https://youtu.be/ypMWVkUXZn8'
 
 Surface Evolver is Ken Brakke's engine for minimising the energy of constrained surfaces — 190,000 lines of C, in continuous use by researchers since the early 1990s. It ships as a terminal program with an X11 graphics window, which is a hard sell in 2026 even for the people who depend on it.
 
-This project wraps that engine in a native desktop application for macOS, Linux and Windows: a syntax-highlighted datafile editor, a command log, and a live WebGL viewer. The engine's own command language is preserved verbatim — nothing was taken away. Installers ship for all three platforms, so end users need no compiler, no X11, and no build step.
+This project wraps that engine in a native desktop application for macOS and Linux: a syntax-highlighted datafile editor, a command log, and a live WebGL viewer. The engine's own command language is preserved verbatim — nothing was taken away. Installers ship for both platforms, so end users need no compiler, no X11, and no build step. Windows was dropped: its native build crashed on every recoverable engine error.
 
 # What the desktop app adds
 
@@ -43,15 +43,15 @@ Rather than fight the constraint, I made it the architecture — one engine inst
 
 **IPC across three languages in two processes.** The UI is TypeScript in a webview, the backend is Rust, and the engine is C in a _different_ process — every user action crosses all of it and has to come back. I settled on line-delimited JSON over stdin/stdout to the sidecar, and a single `rpc(method, params)` command as the only frontend–backend seam. Keeping that seam narrow was the highest-leverage decision in the project: when I migrated the entire desktop framework, the frontend change was one 17-line file. I later ported the sidecar from a 58 MB Bun/TypeScript binary to 345 KB of Rust, verified by driving both implementations with identical command sequences and diffing the parsed responses.
 
-**Owning the whole stack.** The interesting bugs live _between_ the layers — a race between session restore and a user-initiated load, a build script using a shell builtin that does not exist on Windows. The answer was to put a test on every seam, then reduce the number of seams. The C facade carries its own suite of 56 assertions, the FFI boundary has the signature guard above, and the worker protocol is exercised by tests that drive the real binary over stdin the way the backend does.
+**Owning the whole stack.** The interesting bugs live _between_ the layers — a race between session restore and a user-initiated load, a build script using a shell builtin that does not exist on Windows. The answer was to put a test on every seam, then reduce the number of seams. The C facade carries its own suite of 98 checks, the FFI boundary has the signature guard above, and the worker protocol is exercised by tests that drive the real binary over stdin the way the backend does.
 
-The other half was refusing to grow. The C facade went from 37 exports to 28 and the worker from 10 commands to 6, because anything already reachable through the engine's own command language did not need a second structured path to keep correct. Narrowing the models the app _claims_ to support — rejecting the two it could never draw honestly — took the bundled library from 17 of 27 datafiles rendering correctly to 20 of 20. Less surface, fewer places for the layers to disagree.
+The other half was refusing to grow. The C facade went from 49 exports to 28 and the worker from 10 commands to 6, because anything already reachable through the engine's own command language did not need a second structured path to keep correct. Narrowing the models the app _claims_ to support — rejecting the two it could never draw honestly — took the bundled library from 17 of 27 datafiles rendering to 20 of 20 loading and meshing. Less surface, fewer places for the layers to disagree.
 
 # Tech stack
 
 - **Core engine** — C, built headless as a shared library from Brakke's upstream source, kept unmodified
-- **C API** — `se_api.{h,c}`, a 28-function anti-corruption facade with stdout/stderr capture
+- **C API** — `se_api.{h,c}`, a 29-function anti-corruption facade with stdout/stderr capture
 - **Worker sidecar** — Rust, 345 KB, `libloading` (`dlopen`) and `serde_json`
-- **Backend** — Rust, Tauri v2, a single `rpc(method, params)` command over 13 methods
+- **Backend** — Rust, Tauri v2, a single `rpc(method, params)` command over 14 methods
 - **Frontend** — React and Vite, Zustand, Three.js / react-three-fiber, Tailwind CSS
-- **Build** — CMake, Cargo and Bun, with a GitHub Actions matrix covering all three platforms
+- **Build** — CMake, Cargo and Bun, with a GitHub Actions matrix covering macOS and Linux

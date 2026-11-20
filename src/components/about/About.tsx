@@ -40,11 +40,11 @@ export function About() {
         aside={
           <figure className="border-l-2 border-primary pl-5">
             <blockquote className="text-muted-foreground">
-              Surface Evolver is the clear example of my passion for modernizing
-              legacy software. I transformed a powerful but inaccessible
-              decades-old program into a cross-platform desktop app with a
-              simple elegant UI, maintaining 90% engine compatibility while
-              cutting render times by 30%.
+              Surface Evolver is the clearest example of my passion for
+              modernizing legacy software. I took a powerful but inaccessible
+              decades-old C engine and turned it into a desktop app with a
+              simple, elegant UI: every bundled model loads and meshes, and the
+              worker shrank from 58 MB to 345 KB.
             </blockquote>
           </figure>
         }

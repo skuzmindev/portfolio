@@ -6,7 +6,7 @@ description: >-
   measured across 1- and 2-qubit circuits on simulated and hardware-calibrated
   backends.
 date: '2026-05-06'
-status: published
+status: presented
 tags:
   - Python
   - Quantum Computing
@@ -87,7 +87,7 @@ For practical VQE implementations, noise should be treated as a primary design c
 
 ## Interactive Explorer
 
-The figures above come from standalone scripts, which makes them fixed — asking what happens at a readout error the study never plotted meant editing a constant and re-running. [VQE Explorer](https://github.com/skuzmindev/vqe-web) removes that step: a FastAPI service imports the same experiment scripts and exposes them as JSON, and a Next.js dashboard drives them across nine scenarios — expectation values, parameter landscapes, COBYLA optimisation traces, and measurement histograms. Every sampling route takes an explicit readout error and RNG seed and echoes both back, so any figure the app draws names the settings that produced it and can be regenerated exactly. The scripts remain runnable on their own and stay the single source of truth for their own noise parameters; the web layer reads them rather than reimplementing them.
+The study's figures came from standalone scripts, which makes them fixed — asking what happens at a readout error the study never plotted meant editing a constant and re-running. [VQE Explorer](https://github.com/skuzmindev/vqe-web) removes that step: a FastAPI service imports the same experiment scripts and exposes them as JSON, and a Next.js dashboard drives them across nine scenarios — expectation values, parameter landscapes, COBYLA optimisation traces, and measurement histograms. Every sampling route takes an explicit readout error and RNG seed and echoes both back, so any figure the app draws names the settings that produced it and can be regenerated exactly. The scripts remain runnable on their own and stay the single source of truth for their own noise parameters; the web layer reads them rather than reimplementing them.
 
 One constraint shaped the backend more than any other: Qiskit Aer's hardware-calibrated simulators cost roughly 58 MB each and do not release that memory when dropped, so the app builds one per fake backend and shares it across all nine scenarios instead of constructing one per scenario. It runs locally as a research tool.
 

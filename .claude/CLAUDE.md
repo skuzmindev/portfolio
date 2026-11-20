@@ -66,7 +66,7 @@ with `description` — that is the whole list. Every field above is parsed by
 companion web app that way — and a project could carry a `pdf`. Treat the split
 above as editorial convention, not a schema.
 
-`status` carries all seven values; `STATUS_BY_KIND` / `statusLabel()` live in [src/lib/work-status.ts](../src/lib/work-status.ts). Nothing validates frontmatter at build time — `toStatus()` falls back when a status is missing or illegal for its kind, which is the only guarantee the old Sanity schema enforced.
+`status` carries all eight values; `STATUS_BY_KIND` / `statusLabel()` live in [src/lib/work-status.ts](../src/lib/work-status.ts). Nothing validates frontmatter at build time — `toStatus()` falls back when a status is missing or illegal for its kind, which is the only guarantee the old Sanity schema enforced.
 
 **Quote the `date`** in frontmatter. Unquoted, YAML parses it to a `Date` and the local offset can shift it a day; `toDate()` normalises that defensively, but quoting is the intent. Prose fields (`description`, `abstract`) render as one paragraph, so keep them unwrapped on a single logical line.
 

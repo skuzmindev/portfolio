@@ -22,7 +22,7 @@ const jetbrainsMono = localFont({
 });
 
 const description =
-  'Backend and systems engineer — C behind an FFI boundary, Python and TypeScript services above it, and research in quantum computing.';
+  'Software engineer — backend, systems, and quantitative development. C, Python and TypeScript, with research in quantum computing.';
 
 export const metadata: Metadata = {
   // Makes the relative URLs below, and the generated OG image, absolute.

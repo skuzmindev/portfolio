@@ -3,7 +3,7 @@ export type WorkKind = 'project' | 'research';
 
 export const STATUS_BY_KIND = {
   project: ['completed', 'in-progress', 'archived'],
-  research: ['published', 'preprint', 'in-review', 'draft'],
+  research: ['published', 'presented', 'preprint', 'in-review', 'draft'],
 } as const;
 
 /** Every legal status, across both kinds. */
