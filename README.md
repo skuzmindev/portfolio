@@ -10,5 +10,3 @@ This is my personal website that serves as a portfolio for my Software Engineeri
 - Tailwind CSS v4
 - shadcn/ui on Base UI
 - Markdown files in `content/work/`
-
-
